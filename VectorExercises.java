@@ -80,22 +80,20 @@ public class VectorExercises {
 
 
 
-    public static void main(String[] args) {
-        VectorExercises vecTest = new VectorExercises(new double[]{4.0, 3.0, 7.0});
-        int testDim = vecTest.size();
-        VectorExercises testScal = vecTest.scalarProduct(3);
-        VectorExercises testAdd = vecTest.add(testScal);
-        double testGet = vecTest.get(1);
-        double testSet = vecTest.set(1, 6.0);
-        System.out.println(vecTest.toString());
-        VectorExercises testEquals1 = new VectorExercises(new double[]{4.0, 3.0, 7.0});
-        VectorExercises testEquals2 = new VectorExercises(new double[]{4.0, 2.0, 7.0});
-        Object testEquals3 = null;
+    // public static void main(String[] args) {
+    //     VectorExercises vecTest = new VectorExercises(new double[]{4.0, 3.0, 7.0});
+    //     int testDim = vecTest.size();
+    //     VectorExercises testScal = vecTest.scalarProduct(3);
+    //     VectorExercises testAdd = vecTest.add(testScal);
+    //     double testGet = vecTest.get(1);
+    //     double testSet = vecTest.set(1, 6.0);
+    //     System.out.println(vecTest.toString());
+    //     VectorExercises testEquals1 = new VectorExercises(new double[]{4.0, 3.0, 7.0});
+    //     VectorExercises testEquals2 = new VectorExercises(new double[]{4.0, 2.0, 7.0});
 
-        boolean test1 = vecTest.equals(testEquals1);
-        boolean test2 = vecTest.equals(testEquals2);
-        boolean test3 = vecTest.equals(testEquals3);
-    }
+    //     boolean test1 = vecTest.equals(testEquals1);
+    //     boolean test2 = vecTest.equals(testEquals2);
+    // }
 
     
 }
