@@ -1,4 +1,4 @@
-package Algebra;
+package Week7;
 
 public class VectorExercises {
 
