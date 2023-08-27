@@ -17,8 +17,4 @@ public class Department {
     public Project getProject(String newID){
         return(projects.get(newID));
     }
-
-    public Project createProject(String newID, String newTitle){
-
-    }
 }
