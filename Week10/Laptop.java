@@ -68,31 +68,4 @@ public class Laptop {
         ", price = " + Integer.toString(price));
     }
 
-    public static Comparator<Laptop> getComparator(String field) throws IllegalArgumentException{
-        return new Comparator<Laptop>(){
-            @Override
-            public int compare(Laptop l1, Laptop l2){
-                if (field.equals(field) BRAND){
-                    return l1.getBrand().compareTo(l2.getBrand());
-                }
-                else if (field == MODEL){
-                    return l1.getModel().compareTo(l2.getModel());
-                }
-                else if (field == RAM){
-                    return Integer.compare(l1.getRam(), l2.getRam());
-                }
-                else if (field == SSD){
-                    return Integer.compare(l1.getSsd(), l2.getSsd());
-                }
-                else if (field == PRICE){
-                    return Integer.compare(l1.getPrice(), l2.getPrice());
-                }
-                else{
-                    throw new IllegalArgumentException("parameter field is not one of the constants");
-                }
-            }
-        };
-    }
-
-
 }
