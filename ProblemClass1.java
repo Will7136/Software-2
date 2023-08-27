@@ -39,64 +39,64 @@ public class ProblemClass1 {
 
         /// in dev
 
-        // class BilinearInterpolation {
+        class BilinearInterpolation {
 
-        //     public int[][] gridResample(int[][] originalGrid, int scale){
-        //         int newGridWidth =  originalGrid[0].length + (originalGrid[0].length -1 ) * (scale- 1);
-        //         int newGridHeight = originalGrid.length + (originalGrid.length -1 ) * (scale- 1);
-        //         int[][] newGrid = new int[newGridHeight][newGridWidth];
-        //         LinearInterpolation lineResample = new LinearInterpolation();
+            public int[][] gridResample(int[][] originalGrid, int scale){
+                int newGridWidth =  originalGrid[0].length + (originalGrid[0].length -1 ) * (scale- 1);
+                int newGridHeight = originalGrid.length + (originalGrid.length -1 ) * (scale- 1);
+                int[][] newGrid = new int[newGridHeight][newGridWidth];
+                LinearInterpolation lineResample = new LinearInterpolation();
 
-        //         for (int x = 0; x<newGridHeight;x +=2){   //deals with all even rows first ie 0, 2, 4 etc
-        //             newGrid[x] = lineResample.resample(originalGrid[x/scale], scale);
-        //         }
-
-
-        //         for (int y = 0; y<newGridWidth; y++){
-        //             int[] currentColumn = new int[originalGrid.length];
-        //             int[] newColumn = new int[newGridHeight];
-        //             for (int x = 0; x<newGridHeight; x += 2){
-        //                 currentColumn[x/scale] = newGrid[x][y];
-        //             }
-
-        //             newColumn = lineResample.resample(currentColumn, scale);
-
-        //             for (int x = 0; x<newGridHeight; x++){
-        //                 newGrid[x][y] = newColumn[x];
-        //             }
-        //         }
+                for (int x = 0; x<newGridHeight;x +=2){   //deals with all even rows first ie 0, 2, 4 etc
+                    newGrid[x] = lineResample.resample(originalGrid[x/scale], scale);
+                }
 
 
-        //         return newGrid;
-        //     }
+                for (int y = 0; y<newGridWidth; y++){
+                    int[] currentColumn = new int[originalGrid.length];
+                    int[] newColumn = new int[newGridHeight];
+                    for (int x = 0; x<newGridHeight; x += 2){
+                        currentColumn[x/scale] = newGrid[x][y];
+                    }
 
-        // }
+                    newColumn = lineResample.resample(currentColumn, scale);
+
+                    for (int x = 0; x<newGridHeight; x++){
+                        newGrid[x][y] = newColumn[x];
+                    }
+                }
+
+
+                return newGrid;
+            }
+
+        }
             ///in dev
 
         int[] testData1 = {1, 5, 13, 21};
         int[][] testData2 = {{1,50,20,20}, {100, 255, 150, 30}, {10, 255, 130, 210}, {10, 255, 130, 210}};
         LinearInterpolation resampleTest = new LinearInterpolation();
-        // BilinearInterpolation gridResampleTest = new BilinearInterpolation();
+        BilinearInterpolation gridResampleTest = new BilinearInterpolation();
         int[] output = resampleTest.resample(testData1, 2);
         System.out.println(Arrays.toString(output));
         System.out.println("Break");
         System.out.println(Arrays.toString(resampleTest.resample(testData1, 4)));
         System.out.println("Break");
         System.out.println("Break");
-        // int[][] newArr1 = gridResampleTest.gridResample(testData2, 2);
+        int[][] newArr1 = gridResampleTest.gridResample(testData2, 2);
 
-        // for(int x = 0; x < newArr1.length; x++){
-        //     System.out.println(Arrays.toString(newArr1[x]));
-        // }
+        for(int x = 0; x < newArr1.length; x++){
+            System.out.println(Arrays.toString(newArr1[x]));
+        }
         
-        // System.out.println("Break");
-        // System.out.println("Break");
+        System.out.println("Break");
+        System.out.println("Break");
 
-        // int[][] newArr2 = gridResampleTest.gridResample(testData2, 4);
+        int[][] newArr2 = gridResampleTest.gridResample(testData2, 4);
 
-        // for(int x = 0; x < newArr2.length; x++){
-        //     System.out.println(Arrays.toString(newArr2[x]));
-        // }
+        for(int x = 0; x < newArr2.length; x++){
+            System.out.println(Arrays.toString(newArr2[x]));
+        }
 
 
     }
