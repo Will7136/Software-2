@@ -43,15 +43,6 @@ public class ArraySet<T> implements Iset<T>{
         return false;
     }
 
-    public boolean remove(T elt){
-        if (contains(elt)){
-
-        }
-        else{
-            return false;
-        }
-
-    }
 
     public int size(){
         return nextFreeSpace;
